@@ -41,7 +41,7 @@ public class Operations {
         System.out.println(sum);
     }
 
-    /* O metoda care afiseaza toate cifrele pare pina la un nr n (n sa fie dinamic: ca argument). */
+    /* 2.2. O metoda care afiseaza toate cifrele pare pina la un nr n (n sa fie dinamic: ca argument). */
     void Numb_even (){
         System.out.println("Numere pare de la "+0+" pina la "+num);
         for (int i = 0; i <= num; i++)
@@ -50,7 +50,7 @@ public class Operations {
             }
         System.out.println();
     }
-    /*o metoda care afiseaza la ecran "Hello" de 10 ori */
+    /* 2.3. O metoda care afiseaza la ecran "Hello" de 10 ori */
     void Print_Hello(){
         int i = 0;
         while (i<num){
@@ -59,7 +59,7 @@ public class Operations {
         }
         System.out.println();
     }
-    /*O metoda care afiseaza toate cifrele impare pina la un nr n (n sa fie dinamic: ca argument). */
+    /* 2.4. O metoda care afiseaza toate cifrele impare pina la un nr n (n sa fie dinamic: ca argument). */
     void Numb_odd (){
         System.out.println("Numere impare de la "+0+" pina la "+num);
         for (int i = 0; i <= num; i++)
@@ -68,7 +68,7 @@ public class Operations {
             }
         System.out.println();
     }
-    /*O metoda care afiseaza suma cifrelor impare ale nr n (n sa fie dinamic: ca argument). */
+    /* 2.5. O metoda care afiseaza suma cifrelor impare ale nr n (n sa fie dinamic: ca argument). */
     void Sum_odd (){
         int x, k = num, sum = 0;
         while (k != 0){
