@@ -27,10 +27,6 @@ public class Persoana {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNume() {
         return nume;
     }
@@ -55,11 +51,4 @@ public class Persoana {
         this.adresa = adresa;
     }
 
-    public static int getCountId() {
-        return countId;
-    }
-
-    public static void setCountId(int countId) {
-        Persoana.countId = countId;
-    }
 }

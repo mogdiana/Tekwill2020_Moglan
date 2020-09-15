@@ -1,33 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package md.tekwill.service;
 
-import md.tekwill.dao.PersoanaDao;
 import md.tekwill.model.Persoana;
 
-public class PersoanaService {
-    PersoanaDao persoanaDao = new PersoanaDao();
-//    AdresaDao adresaDao = new AdresaDao();
+/**
+ *
+ * @author User
+ */
+public interface PersoanaService {
+   public Persoana create(Persoana persoana);
 
-    public Persoana create(Persoana persoana) {
-       return persoanaDao.create(persoana);
-    }
+    public Persoana read(int id);
 
-    public Persoana read(int id) {
-        return persoanaDao.read(id);
-    }
+    public Persoana[] readAll();
 
-    public Persoana[] readAll() {
-        return persoanaDao.readAll();
-    }
+    public boolean update(int id, String nume, String prenume);
 
-    public boolean update(int id, String nume, String prenume) {
-        return persoanaDao.update(id, nume, prenume);
-    }
+    public boolean delete(int id);
 
-    public boolean delete(int id) {
-        return persoanaDao.delete(id);
-    }
-
-    public void printeazaToatePersoanele(Object whereObject) {
-        persoanaDao.printeazaToatePersoanele(whereObject);
-    }
+    public void printeazaToatePersoanele(Object whereObject);
+    
+    public void printeazaToatePersoanele();
 }

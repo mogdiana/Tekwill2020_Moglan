@@ -6,7 +6,7 @@
 package md.tekwill.ui;
 
 import md.tekwill.model.Persoana;
-import md.tekwill.service.PersoanaService;
+import md.tekwill.service.PersoanaServiceImpl;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 
@@ -16,18 +16,18 @@ import javax.swing.JOptionPane;
  */
 public class Persoana1 extends javax.swing.JFrame {
 
-    PersoanaService service;
+    PersoanaServiceImpl service = new PersoanaServiceImpl();
 
     /**
      * Creates new form Persoana1
      */
     public Persoana1() {
         initComponents();
-        service = new PersoanaService();
-        Persoana persoana1 = new Persoana("Ion", "Bostan");
-        Persoana persoana2 = new Persoana("ZZ", "AA");
-        service.create(persoana1);
-        service.create(persoana2);
+//        service = new PersoanaService();
+//        Persoana persoana1 = new Persoana("Ion", "Bostan");
+//        Persoana persoana2 = new Persoana("ZZ", "AA");
+//        service.create(persoana1);
+//        service.create(persoana2);
     }
 
     /**
@@ -77,14 +77,14 @@ public class Persoana1 extends javax.swing.JFrame {
 
         jLabel2.setText("Prenume");
 
-        createButton.setText("Create");
+        createButton.setText("Creare");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createButtonActionPerformed(evt);
             }
         });
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Șterge");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
@@ -99,7 +99,7 @@ public class Persoana1 extends javax.swing.JFrame {
             }
         });
 
-        findButton.setText("Find");
+        findButton.setText("Caută");
         findButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 findButtonActionPerformed(evt);
@@ -126,14 +126,14 @@ public class Persoana1 extends javax.swing.JFrame {
             }
         });
 
-        updateButton.setText("Update");
+        updateButton.setText("Reînnoiește");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
 
-        deleteButton1.setText("Delete");
+        deleteButton1.setText("Șterge din tabel");
         deleteButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButton1ActionPerformed(evt);
@@ -145,37 +145,32 @@ public class Persoana1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(showPersons)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(numeJText)
-                                    .addComponent(prenumeJText, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                    .addComponent(idJText))
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(createButton)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(findButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(updateButton)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(49, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deleteButton1, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(370, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(deleteButton1)
+                        .addComponent(showPersons)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(numeJText, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(prenumeJText, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(idJText, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(24, 24, 24)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(createButton)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(findButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(updateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +195,11 @@ public class Persoana1 extends javax.swing.JFrame {
                         .addComponent(updateButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(showPersons)
-                .addGap(2, 2, 2)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deleteButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,7 +243,7 @@ public class Persoana1 extends javax.swing.JFrame {
         else {
             numeJText.setText(p.getNume());
             prenumeJText.setText(p.getPreNume());
-            idJText.setText(String.valueOf(p.getId()));
+            //idJText.setText(String.valueOf(p.getId()));
         }
     }//GEN-LAST:event_findButtonActionPerformed
 
@@ -271,7 +266,7 @@ public class Persoana1 extends javax.swing.JFrame {
             if (service.delete(Integer.parseInt(idJText.getText()))) {
                 JOptionPane.showMessageDialog(null, "Persoana cu id = " + idJText.getText() + " a fost eliminată");
             } else {
-                JOptionPane.showMessageDialog(null, "Nu s-a eliminat persoana");
+                JOptionPane.showMessageDialog(null, "Nu s-a eliminat persoana din motive necunoscute");
             }
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
